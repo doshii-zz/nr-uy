@@ -1,0 +1,5 @@
+Vagrantfile
+.vagrant
+env.local
+.sass-cache
+
