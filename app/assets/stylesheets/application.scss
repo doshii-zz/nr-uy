@@ -1,9 +1,6 @@
 @import 'compass';
 
-$sprite: url(/assets/sprite.png);
-body h1 {
-  font-size: 26px;
-  color: red;
-  @include box-sizing(border-box);
-}
+@import 'fonts';
+
+@import 'main';
 
