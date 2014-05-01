@@ -1,6 +1,10 @@
 $nav-colors: #24232C;
 $secundary-color-1: #dab20f;
 $text-resalted-color-1: #42c5f3;
+$inactive-link-color: #33303c;
+$inactive-font-link-color: #737278;
+$active-link-color: #42c5f3;
+$active-font-link-color: black;
 
 $font-oswald-r: 'oswald-Regular', helvetica ,sans-serif;
 
@@ -11,6 +15,10 @@ body {
   padding: 0px;
   @extend .font-smoothing;
 }//body
+
+a {
+  text-decoration: none;
+}
 
 @mixin clearfix() {
   *zoom:1;
@@ -65,26 +73,32 @@ header {
     }//span
   }//h3
 
-  a.brows {
+  .menu {
     display: inline-block;
-    margin: 0;
-    text-transform: uppercase;
-    color: white;
-    font-family: $font-oswald-r;
-    font-weight: normal;
-    font-size: 18px
-  }//brows
+    float: right;
+    margin-right: 40px;
 
-  a.return {
-    display: inline-block;
-    margin: 0;
-    text-transform: uppercase;
-    color: white;
-    font-family: $font-oswald-r;
-    font-weight: normal;
-    color: $secundary-color-1;
-    font-size: 18px;
-  }// return
+    a.brows {
+      display: inline-block;
+      margin: 10px 45px 0 0;
+      text-transform: uppercase;
+      color: white;
+      font-family: $font-oswald-r;
+      font-weight: normal;
+      font-size: 18px
+    }//brows
+
+    a.return {
+      display: inline-block;
+      margin: 10px 45px 0 0;
+      text-transform: uppercase;
+      color: white;
+      font-family: $font-oswald-r;
+      font-weight: normal;
+      color: $secundary-color-1;
+      font-size: 18px;
+    }// return
+  }//menu
 
   .lenguage-links {
     display: inline-block;
@@ -94,11 +108,12 @@ header {
       height: 30px;
       width: 30px;
       border-radius: 15px;
-      background-color: $text-resalted-color-1;
+      background-color: $active-link-color;
       margin: 5px 5px 5px 0;
       display: inline-block;
       font-family: $font-oswald-r;
       font-size: 13px;
+      color: $active-font-link-color;
       text-align: center;
       text-transform: uppercase;
       font-weight: bold;
@@ -109,16 +124,26 @@ header {
       height: 30px;
       width: 30px;
       border-radius: 15px;
-      background-color: $text-resalted-color-1;
+      background-color: $inactive-link-color;
       margin: 5px 5px 5px 0;
       display: inline-block;
       font-family: $font-oswald-r;
       font-size: 13px;
+      color: $inactive-font-link-color;
       text-align: center;
       text-transform: uppercase;
       font-weight: bold;
       line-height: 30px;
-
     }//esp
+
+    .eng, .esp {
+      &:hover {
+        background-color: $nav-colors;
+        border: 2px solid white;
+        color: white;
+        height: 26px;
+        width: 26px;
+      }//hoverd lenguage links
+    }//eng esp
   }//lenguage links
 }//header
