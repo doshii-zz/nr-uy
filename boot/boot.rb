@@ -7,17 +7,6 @@ end
 require 'bundler'
 Bundler.require(:default)
 
-require 'mongo_mapper'
-if ENV['MONGOHQ_URL']
-  uri = URI.parse(ENV['MONGOHQ_URL'])
-  MongoMapper.connection = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
-  MongoMapper.database = uri.path.gsub(/^\//, '')
-  puts ">> db is #{uri.path.gsub(/^\//, '')}"
-else
-  MongoMapper.database = 'my_new_app_development'
-end
-
-
 module MyNewApp
   module Helpers
   end
